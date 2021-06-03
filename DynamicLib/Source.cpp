@@ -1,12 +1,14 @@
 #include "pch.h"
-#include <string>
+#include "Header.h"
 
-extern "C" __declspec(dllexport) int MyGroup(int group)
+
+int MyGroup(int group)
 {
 	return group;
 }
 
-extern "C" __declspec(dllexport) std::string MyName(const char* name)
+void MyName(char* name)
 {
-	return name;
+	const char* str = "Pham Xuan Thien";
+	strcpy_s(name, strlen(str) + 1, str);
 }
